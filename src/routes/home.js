@@ -31,11 +31,11 @@ router.post("/sendEmail", (req, res) => {
 
   async function sendMail() {
     try {
-      const accessToken = await oAuth2Client.getAccessToken(Error);
-      if (Error)
+      const accessToken = await oAuth2Client.getAccessToken();
+      /* if (Error)
         return console.log(
           "Fallo al conseguir el refreshToken, el correo no se envió"
-        );
+        ); */
 
       const transporter = nodemailer.createTransport({
         service: "gmail",
